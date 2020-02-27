@@ -9,5 +9,20 @@
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 
 n = int(input("число:"))
-s = [[7], [6], [5], [4], [3], [2], [1], ]
-while n = s
+s = [7, 6, 5, 3, 2, 1]
+f = s[-1]
+while True:
+    if n > s[0]:
+        s.insert(0, n)
+        break
+    elif n > s[-f]:
+        f = f + 1
+        continue
+    elif n <= s[-f]:
+        s.insert(-s[::-1].index(f), n)
+        break
+
+print(f)
+print(s[-f])
+print(s)
+
