@@ -5,5 +5,5 @@
 e = "дело было вечером делатьбылонечего"
 e = e.split()
 for ind, el in enumerate(e, 1):
-    print(ind, el_10)
+    print(ind, el)
 

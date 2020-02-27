@@ -20,3 +20,21 @@
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
+
+i = 1
+while True:
+    name = input(f"Введите Название товара {i} ")
+    price = input(f"Введите Цену товара {i} ")
+    qty = input(f"Введите Кол-во товара {i} ")
+    ask = input("желаете внести ещё один товар 'да' 'нет'?")
+    products = []
+    product = {"название": name, "цена": price, "кол-во": qty}
+    products.append(product)
+    i += 1
+    if ask == 'Да' or ask == 'да':
+        continue
+    else:
+        break
+
+for ind, el in enumerate(products, 1):
+    print("База товаров:", ind, el)
