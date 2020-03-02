@@ -20,21 +20,29 @@
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
+products = []
 
 i = 1
-while True:
+while input("желаете внести ещё один товар 'да' 'нет'?").upper() == 'ДА':
     name = input(f"Введите Название товара {i} ")
     price = input(f"Введите Цену товара {i} ")
     qty = input(f"Введите Кол-во товара {i} ")
-    ask = input("желаете внести ещё один товар 'да' 'нет'?")
-    products = []
     product = {"название": name, "цена": price, "кол-во": qty}
     products.append(product)
     i += 1
-    if ask == 'Да' or ask == 'да':
-        continue
-    else:
-        break
+analitics = {}
+for product in products:
+    for name, price, qty in product.items():
+        if name in analitics:
+            analitics[name].append(qty)
+        else:
+            analitics[name] = [qty]
+print(analitics)
 
 for ind, el in enumerate(products, 1):
     print("База товаров:", ind, el)
+
+for ind, el in enumerate(analitics, 1):
+    print("аналитика:", ind, el)
+
+

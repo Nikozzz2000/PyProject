@@ -2,8 +2,9 @@
 # Вывести каждое слово с новой строки. Строки необходимо пронумеровать.
 # Если в слово длинное, выводить только первые 10 букв в слове.
 
-e = "дело было вечером делатьбылонечего"
-e = e.split()
-for ind, el in enumerate(e, 1):
-    print(ind, el)
-
+my_str = input("Your string: ")
+a = my_str.split(' ')
+for i, long in enumerate(a, 1):
+    if len(long) > 10:
+        long = long[0:10]
+    print(f"{i}) - {long}")

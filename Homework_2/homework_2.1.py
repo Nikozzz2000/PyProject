@@ -5,26 +5,20 @@
 
 
 # Целое число
-a = 6
-
+# a = 6
 # Дробное число
-b = 2.6
-
+# b = 2.6
 # Строка
-c = "строка"
-
+# c = "строка"
 # Булевый
-d = True
-
+# d = True
 # Список
-e = [1, 2, 3]
-
+# e = [1, 2, 3]
 # Кортеж
-f = (1, 2, 3)
-
+# f = (1, 2, 3)
 # Множество
-g = {"numeral": 1, "letter": "a"}
+# g = {"numeral": 1, "letter": "a"}
+my_string = [6, 2.6, "string", True, [1, ], (1, 2), {"a": 1}]
 
-p = [a, b, c, d, e, f, g]
-for i in p:
-    print(type(i))
+for i, item in enumerate(my_string):
+    print(f"{i}) {item} - {type(item)}")
