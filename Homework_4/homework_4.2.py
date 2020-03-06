@@ -3,7 +3,13 @@
 
 # решить генерацию случайных чисел в my_list
 
-my_list = [11, 1, 4, 2, 6, 5, 4, 9]
+import random
+
+my_list = []
+for i in range(10):
+    a = random.randint(0, 99)
+    my_list.append(a)
+
 my_new_list = [el for num, el in enumerate(my_list) if my_list[num - 1] < my_list[num]]
 print(f'Исходный список {my_list}')
 print(f'Новый список {my_new_list}')
