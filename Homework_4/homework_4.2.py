@@ -10,6 +10,6 @@ for i in range(10):
     a = random.randint(0, 99)
     my_list.append(a)
 
-my_new_list = [el for num, el in enumerate(my_list) if my_list[num - 1] < my_list[num]]
+my_new_list = [my_list[el] for el in range(1, len(my_list)) if my_list[el - 1] < my_list[el]]
 print(f'Исходный список {my_list}')
 print(f'Новый список {my_new_list}')
