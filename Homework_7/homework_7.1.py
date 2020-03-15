@@ -13,34 +13,31 @@
 
 
 class Matrix:
-    def __init__(self, list_1, list_2):
-        # self.matr = [list_1, list_2]
-        self.list_1 = list_1
-        self.list_2 = list_2
+    def __init__(self, n_1_1, n_1_2, n_1_3, n_2_1, n_2_2, n_2_3, n_3_1, n_3_2, n_3_3):
+        self.line_1_1 = [n_1_1, n_1_2, n_1_3]
+        self.line_1_2 = [n_2_1, n_2_2, n_2_3]
+        self.line_1_3 = [n_3_1, n_3_2, n_3_3]
 
-    def __add__(self):
-        matr = [[0, 0, 0],
-                [0, 0, 0],
-                [0, 0, 0]]
-
-        for i in range(len(self.list_1)):
-
-            for j in range(len(self.list_2[i])):
-                matr[i][j] = self.list_1[i][j] + self.list_2[i][j]
-
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+    def __add__(self, other):
+        new_matrix = []
+        for i in range(len(self.line_1_1)):
+            number = self.line_1_1[i] + other.line_1_1[i]
+            new_matrix.append(number)
+            i += 1
+        for i in range(len(self.line_1_2)):
+            number = self.line_1_2[i] + other.line_1_2[i]
+            new_matrix.append(number)
+            i += 1
+        for i in range(len(self.line_1_3)):
+            number = self.line_1_3[i] + other.line_1_3[i]
+            new_matrix.append(number)
+            i += 1
+        return new_matrix
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+        return f'{str(self.line_1_1)}\n{str(self.line_1_2)}\n{str(self.line_1_3)}'
 
 
-my_matrix = Matrix([[5, 18, 11],
-                    [6, 17, 23],
-                    [41, 50, 9]],
-                   [[45, 8, 2],
-                    [6, 7, 93],
-                    [24, 5, 97]])
-# result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-
-
-print(my_matrix.__add__())
+my_matrix_1 = Matrix(3, 5, 2, 4, 5, 9, 7, 4, 6)
+my_matrix_2 = Matrix(2, 4, 5, 7, 4, 6, 4, 5, 9)
+print(my_matrix_1 + my_matrix_2)
